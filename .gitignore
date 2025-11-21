@@ -9,6 +9,9 @@
 # Terraform automatically created directory
 .terraform/
 
+# pem file
+*.pem
+
 # crash log 
 crash.log
 crash.*.log
