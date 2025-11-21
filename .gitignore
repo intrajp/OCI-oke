@@ -1,0 +1,17 @@
+# state file
+*.tfstate
+*.tfstate.*
+
+# var files 
+*.tfvars
+*.tfvars.json
+
+# Terraform automatically created directory
+.terraform/
+
+# crash log 
+crash.log
+crash.*.log
+
+#
+my-config.tfbackend
