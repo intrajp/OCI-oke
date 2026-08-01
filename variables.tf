@@ -66,3 +66,5 @@ variable "source_cidr_for_http" {
   description = "IP address for HTTP which should be allowed (i.e. Your Global IP/32)"
   default     = "0.0.0.0/0"
 }
+
+variable "image_oke_id" {}
