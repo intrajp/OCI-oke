@@ -12,7 +12,7 @@ resource "oci_containerengine_cluster" "my_cluster" {
   compartment_id     = local.compartment_id
   name               = "MyOkeCluster"
   vcn_id             = local.vcn_id
-  kubernetes_version = "v1.33.1"
+  kubernetes_version = "v1.36.1"
 }
 
 # -------------------------------------------------
@@ -29,14 +29,14 @@ resource "oci_containerengine_node_pool" "my_node_pool" {
     size = 2
 
     placement_configs {
-      availability_domain = "uSnm:AP-OSAKA-1-AD-1"
+      availability_domain = "uSnm:AP-TOKYO-1-AD-1"
       subnet_id           = local.oke_subnet_id
     }
   }
 
   node_shape_config {
     ocpus         = 1
-    memory_in_gbs = 16
+    memory_in_gbs = 8
   }
 
   node_source_details {

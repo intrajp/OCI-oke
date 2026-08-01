@@ -22,7 +22,9 @@ terraform {
 
 ### 2. Environment Variables
 
-refer OCI-infra: https://github.com/intrajp/OCI-infra
+You should set proper OKE image.
+
+Refer OCI-infra: https://github.com/intrajp/OCI-infra
 
 ## 🚀 3. Deployment Steps
 
