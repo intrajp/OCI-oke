@@ -12,21 +12,22 @@ resource "oci_containerengine_cluster" "my_cluster" {
   compartment_id     = local.compartment_id
   name               = "MyOkeCluster"
   vcn_id             = local.vcn_id
-  kubernetes_version = "v1.36.1"
+  kubernetes_version = "v1.36.4"
 }
 
 # -------------------------------------------------
 # OKE worker node pool
 # -------------------------------------------------
 resource "oci_containerengine_node_pool" "my_node_pool" {
-  cluster_id     = oci_containerengine_cluster.my_cluster.id
-  compartment_id = local.compartment_id
-  name           = "MyNodePool"
+  cluster_id         = oci_containerengine_cluster.my_cluster.id
+  compartment_id     = local.compartment_id
+  name               = "MyNodePool"
+  kubernetes_version = oci_containerengine_cluster.my_cluster.kubernetes_version
 
   node_shape = "VM.Standard.E4.Flex"
 
   node_config_details {
-    size = 2
+    size = 1
 
     placement_configs {
       availability_domain = "uSnm:AP-TOKYO-1-AD-1"
